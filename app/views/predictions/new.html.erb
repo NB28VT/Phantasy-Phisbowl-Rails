@@ -1,0 +1,85 @@
+<h1>Prediction Page</h1>
+
+<% if @prediction.errors.any? %>
+  <h2>ERROR!</h2>
+<ul>
+  <% @prediction.errors.full_messages.each do |error_msg| %>
+  <li><%= error_msg %></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+
+
+* Set 1 opener
+* Set 1 closer
+* Set 2 opener
+* Set 2 closer
+* Encore
+* Cover song (a song by another band that is not a Phish solo band)
+* Elemental song (relating to an earth element, like fire, light etc.)
+* Gamehendge song (a song the references the band's fictional universe,
+Gamehendge (http://en.wikipedia.org/wiki/Gamehendge))
+* Five wild card songs that could appear anywhere
+* A song about an animal
+* A song with a name as a title
+* A song about a place
+
+
+
+
+<%= form_for @prediction do |f| %>
+  <%= f.label :set_1_opener %>
+  <%= f.text_field :set_1_opener %>
+
+  <%= f.label :set_1_closer %>
+  <%= f.text_field :set_1_closer %>
+
+  <%= f.label :set_2_opener %>
+  <%= f.text_field :set_2_opener %>
+
+  <%= f.label :set_2_closer %>
+  <%= f.date_select :set_2_closer %>
+
+  <%= f.label :encore %>
+  <%= f.date_select :encore %>
+
+  <%= f.label :cover_song %>
+  <%= f.date_select :cover_song %>
+
+  <%= f.label :elemental_song %>
+  <%= f.date_select :elemental_song %>
+
+  <%= f.label :gamehendge_song %>
+  <%= f.date_select :gamehendge_song %>
+
+  <%= f.label :animal_song %>
+  <%= f.date_select :animal_song %>
+
+  <%= f.label :name_song %>
+  <%= f.date_select :name_song %>
+
+  <%= f.label :place_song %>
+  <%= f.date_select :place_song %>
+
+  <%= f.label :random_song_1 %>
+  <%= f.date_select :random_song_1 %>
+
+  <%= f.label :random_song_2 %>
+  <%= f.date_select :random_song_2 %>
+
+  <%= f.label :random_song_3 %>
+  <%= f.date_select :random_song_3 %>
+
+  <%= f.label :random_song_4 %>
+  <%= f.date_select :random_song_4 %>
+
+  <%= f.label :random_song_5 %>
+  <%= f.date_select :random_song_5 %>
+
+
+
+  <%= f.submit "Submit Predictions" %>
+
+<% end %>
